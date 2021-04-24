@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+   openrct2:
+      container_name: openrct2-cli
+      image: ghcr.io/br0fessional/openrct2-docker:latest
+      build: .
+      ports:
+         - 11753:11753
+         - 11754:11754/udp
+      volumes:
+         - ./config/config.ini:/home/openrct2/.config/OpenRCT2/config.ini
+         - ./config/groups.json:/home/openrct2/.config/OpenRCT2/groups.json
+         - ./config/users.json:/home/openrct2/.config/OpenRCT2/users.json
+         - ./logs/chat:/home/openrct2/.config/OpenRCT2/chatlogs
+         - ./logs/server:/home/openrct2/.config/OpenRCT2/serverlogs
+         - ./save/${PARK}:/home/openrct2/.config/OpenRCT2/save
