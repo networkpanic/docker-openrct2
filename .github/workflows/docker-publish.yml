@@ -5,10 +5,12 @@ on:
     # Publish `main` as Docker `latest` image.
     branches:
       - main
-
     # Publish `v1.2.3` tags as releases.
     tags:
       - v*
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 0 * * *'
 
   # Run tests for any PRs.
   pull_request:
