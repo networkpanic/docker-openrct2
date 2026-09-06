@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.2
+# syntax=docker/dockerfile:1.27
 
 # Build OpenRCT2
 FROM alpine:latest AS build-env
